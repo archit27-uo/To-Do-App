@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/second',
+      initialRoute: '/',
       routes: {
         '/': (context) => TaskScreen(),
         '/second': (context) => const newTask(),
