@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:to_do/screens/newTask_screen.dart';
 import 'package:to_do/widgets/taskTile.dart';
+import 'package:to_do/widgets/task_list.dart';
 
 class TaskScreen extends StatelessWidget {
 
@@ -33,22 +35,15 @@ class TaskScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30,),
-              Expanded(
-                child: ListView(
-                  scrollDirection: Axis.vertical,
-                  children: [
-                    TaskTile(),
-                    TaskTile(),
-                ],
-              ),
-              ),
+              TasksList(),
+
               Container(
                 alignment: AlignmentDirectional.bottomEnd,
                 child: Padding(
                   padding: const EdgeInsets.all(25.0),
                   child: FloatingActionButton(
                       onPressed: (){
-
+                          showModalBottomSheet(context: context, builder: (context)=> newTask());
                       },
 
                     backgroundColor: Color(0xFFFC5185),
