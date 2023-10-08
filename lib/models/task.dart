@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 class Task{
   late final String taskTitle;
   late bool isDone;
@@ -7,6 +9,7 @@ class Task{
   void toggleCheckbox(){
     if(isDone==true){
       isDone=false;
+
     }else{
       isDone=true;
 
