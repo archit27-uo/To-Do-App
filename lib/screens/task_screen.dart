@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:to_do/screens/newTask_screen.dart';
 import 'package:to_do/widgets/taskTile.dart';
 import 'package:to_do/widgets/task_list.dart';
-import 'package:to_do/models/task.dart';
+import 'package:to_do/models/task_provider.dart';
 import 'package:provider/provider.dart';
 
 class TaskScreen extends StatefulWidget {
@@ -10,22 +10,23 @@ class TaskScreen extends StatefulWidget {
   State<TaskScreen> createState() => _TaskScreenState();
 }
 
-class Data extends ChangeNotifier {
-   List<Task> tasks = [
-    Task(taskTitle: 'Buy Chocolate'),
-    Task(taskTitle: 'Study 1 hour Flutter'),
-    Task(taskTitle: 'Exercise'),
-  ];
-  void addData(String newVal){
-    tasks.add(Task(taskTitle: newVal));
-    notifyListeners();
-  }
-}
+// class Data extends ChangeNotifier {
+//
+//   //  void updated(){
+//   //    notifyListeners();
+//   //  }
+//   // void addData(String newVal){
+//   //   tasks.add(Task(taskTitle: newVal));
+//   //
+//   //   notifyListeners();
+//   // }
+// }
 class _TaskScreenState extends State<TaskScreen> {
 
 
   @override
   Widget build(BuildContext context) {
+    //final providerTask = Provider.of<TaskProvider>(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFFF5F5F5),
